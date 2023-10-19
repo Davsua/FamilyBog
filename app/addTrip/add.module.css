@@ -1,0 +1,19 @@
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    border: 1px solid #7289da;
+    padding: 8px 16px;
+    margin: 5px
+}
+
+.button {
+    background-color: #198754;
+font-weight: bold;
+color: white;
+padding: 12px 24px;
+width: fit-content;
+margin: 15px auto;
+}
