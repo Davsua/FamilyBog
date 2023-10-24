@@ -20,7 +20,7 @@ export const GET = async (req: any, { params }: any) => {
 export const DELETE = async (req: Request, { params }: any) => {
   await connectDB();
   const id = params.id;
-  console.log(params);
+  //console.log(params);
   try {
     const trip = await TripModel.findByIdAndDelete(id);
     //console.log('aqui');
