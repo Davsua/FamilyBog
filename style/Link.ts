@@ -9,3 +9,7 @@ font-weight: ${(props) => (props.$using ? 'bold' : 300)};
 list-style-type: none;
 
 `;
+
+export const LinkMainStyled = styled(LinkStyled)`
+color: white;
+`;

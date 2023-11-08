@@ -1,12 +1,12 @@
-import Link from 'next/link'; // client side navigation
 import { ReactNode } from 'react';
 import './globals.css';
 import NavBar from '../components/NavBar';
-//import { exo2, orbitron } from './fonts';
 import { Metadata } from 'next';
-//import Providers from '../components/Providers';
-//import ThemeSwitcher from '../components/ThemeSwitch';
+
 import { orbitron } from '@/app/fonts';
+
+import styles from './page.module.css';
+import MainNavBar from '@/components/mainNavBar/MainNavBar';
 
 interface LayOutProps {
   children: ReactNode;
@@ -24,8 +24,8 @@ export default function RootLayout({ children }: LayOutProps) {
   return (
     <html lang='en'>
       <body style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        <header>
-          <NavBar />
+        <header className={styles.header}>
+          <MainNavBar />
         </header>
         <main>{children}</main>
 

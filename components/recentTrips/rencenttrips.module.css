@@ -1,0 +1,34 @@
+.listContainer{
+    background-color: rgb(196, 196, 196);
+    padding: 10px 50px;
+    margin: auto;
+}
+
+.list{
+    list-style: none ;
+    padding: 0;
+}
+
+.header {
+    font-size: 10px;
+    margin-bottom: 20px;
+}
+
+.imageContainer {
+    width: 140px;
+    height: 100px;
+    position: relative;
+  }
+
+@media (max-width: 768px) {
+    .list{ 
+      display: flex;
+      flex-direction: row;
+    }
+
+    .imageContainer {
+        width: 60px;
+        height: 30px;
+        
+      }
+  }

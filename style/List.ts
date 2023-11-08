@@ -8,12 +8,12 @@ list-style: none;
 display: flex;
 gap: 8px;
 flex-wrap: wrap;
-justify-content: center;
+justify-content: space-evenly;
 `;
 
 export const StyledListItem = styled.li<{ $title?: boolean }>`
     font-weight: ${(props) => (props.$title ? 'bold' : 300)};
-    width: 320px;
+    width: 250px;
     margin-bottom: 16px;
     margin-right: 12px;
     border-radius: 10px;

@@ -22,9 +22,12 @@ interface Props {
 }
 
 export default async function TripPage({ params: { slug } }: any) {
-  console.log(slug);
+  //console.log(slug);
 
   const trip = await getTripBySlug(slug);
+
+  //console.log(typeof trip.image);
+  console.log(trip.image);
 
   if (!trip) {
     notFound();
@@ -39,7 +42,7 @@ export default async function TripPage({ params: { slug } }: any) {
           <p className='italic pb-2'>{trip.createdAt}</p>
           {/*<ShareButtons />*/}
         </div>
-        <SwiperGallery />
+        <SwiperGallery images={trip.image} />
         {/*<Image src={trip.image} alt='stardew-valley' width='640' height='360' className='mb-2 rounded' />*/}
         <article
           dangerouslySetInnerHTML={{ __html: trip.resume }}

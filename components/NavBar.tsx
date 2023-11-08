@@ -16,19 +16,19 @@ const NavBar = () => {
         </StyledNavListItem>
 
         <StyledNavListItem style={{ marginLeft: 'auto' }}>
-          <NavLink href='/trips' prefetch={undefined}>
+          <NavLink href='/navigate/trips' prefetch={undefined}>
             Trips
           </NavLink>
         </StyledNavListItem>
 
         <StyledNavListItem>
-          <NavLink href='/about' prefetch={false}>
+          <NavLink href='/navigate/about' prefetch={false}>
             About
           </NavLink>
         </StyledNavListItem>
 
         <StyledNavListItem>
-          <NavLink href='/addTrip' prefetch={false}>
+          <NavLink href='/navigate/addTrip' prefetch={false}>
             Add Trip
           </NavLink>
         </StyledNavListItem>

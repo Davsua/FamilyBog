@@ -21,3 +21,7 @@ export const subtitlePb = styled.p`
     font-weight: 600px;
     padding-bottom: 10px;
 `;
+
+export const StyledMainNavList = styled(StyledNavList)`
+padding: 0px 25px;
+`;

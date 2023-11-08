@@ -1,4 +1,4 @@
-import { LinkStyled } from '@/style/Link';
+import { LinkMainStyled } from '@/style/Link';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 //import { useRouter } from 'next/router';
@@ -10,31 +10,31 @@ interface Props {
   prefetch: any;
 }
 
-const NavLink: React.FC<Props> = ({ href, children, prefetch }) => {
+const MainNavLink: React.FC<Props> = ({ href, children, prefetch }) => {
   const pathname = usePathname();
   //const { asPath } = useRouter();
 
   if (pathname === href) {
     return (
-      <LinkStyled $using href={href}>
+      <LinkMainStyled $using href={href}>
         {children}
-      </LinkStyled>
+      </LinkMainStyled>
     );
   }
 
   if (href === 'navigate/addTrip') {
     return (
-      <LinkStyled style={{ color: '#198754', textDecoration: 'none' }} $using $title href={href}>
+      <LinkMainStyled style={{ color: '#198754', textDecoration: 'none' }} $using $title href={href}>
         {children}
-      </LinkStyled>
+      </LinkMainStyled>
     );
   }
 
   return (
-    <LinkStyled href={href} prefetch={prefetch}>
+    <LinkMainStyled href={href} prefetch={prefetch}>
       <span>{children}</span>
-    </LinkStyled>
+    </LinkMainStyled>
   );
 };
 
-export default NavLink;
+export default MainNavLink;

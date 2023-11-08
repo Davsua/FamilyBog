@@ -11,14 +11,18 @@ import 'swiper/css/pagination';
 // import required modules
 import { Pagination } from 'swiper/modules';
 
-import img1 from '@/public/pictures/img1.jpg';
-import img2 from '@/public/pictures/img2.jpg';
-import img3 from '@/public/pictures/img3.jpg';
-import img4 from '@/public/pictures/img4.jpg';
+import img1 from '@/public/img1.jpg';
+import img2 from '@/public/1698110897816_img2.jpg';
+import img3 from '@/public/img3.jpg';
 import Image from 'next/image';
 
-export default function SwiperGallery() {
-  img1;
+interface Props {
+  images: string[];
+}
+
+export const SwiperGallery: React.FC<Props> = ({ images }) => {
+  //console.log(typeof images);
+
   return (
     <>
       <Swiper
@@ -28,19 +32,14 @@ export default function SwiperGallery() {
         modules={[Pagination]}
         className='mySwiper'
       >
-        <SwiperSlide>
-          <Image src={img1} alt='img1' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={img2} alt='img2' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={img3} alt='img3' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={img4} alt='img4' />
-        </SwiperSlide>
+        {images.map((img) => (
+          <SwiperSlide key={img}>
+            <Image src={img} alt='stardew-valley' width='640' height='360' className='mb-2 rounded' />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );
-}
+};
+
+export default SwiperGallery;
