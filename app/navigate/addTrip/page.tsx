@@ -50,9 +50,12 @@ export default function AddTrip() {
 
       if (res.ok) {
         const data = await res.json();
-        setImageUrls(data.urls);
-
-        const tripData = { title, shortResume, resume, slug, image: imageUrls };
+        console.log(data);
+        const newImages = data.urls;
+        //setImageUrls(newImages);
+        //console.log(imageUrls);
+        const tripData = { title, shortResume, resume, slug, image: newImages };
+        console.log(tripData);
         const createTripRes = await fetch('http://localhost:3000/api/trip', {
           method: 'POST',
           headers: {

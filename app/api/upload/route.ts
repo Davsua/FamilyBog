@@ -35,7 +35,7 @@ export const POST = async (req: any) => {
     const data = await req.formData();
     const files = data.getAll('files');
 
-    //console.log(files);
+    console.log(files);
 
     if (!files || files.length === 0) {
       throw new Error('No files provided');

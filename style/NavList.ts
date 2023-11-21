@@ -6,8 +6,7 @@ list-style: none;
 display: flex;
 gap: 8px;
 margin-bottom: 16px;
-padding-bottom: 10px;
-padding-left: 0px;
+padding: 0px 20px;
 `;
 
 export const StyledNavListItem = styled.li<{ $title?: boolean; $add?: boolean }>`

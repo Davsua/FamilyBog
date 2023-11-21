@@ -3,6 +3,7 @@ import { ITrip } from '@/interfaces/trip';
 import { ImageListStyled, LinkSListStyled, PListStyled } from '@/style/List';
 import RemoveButton from './RemoveButton';
 import styles from './card.module.css';
+import { usePathname } from 'next/navigation';
 
 interface Props {
   trip: ITrip;
@@ -12,9 +13,12 @@ const Card: React.FC<Props> = ({ trip }) => {
   //console.log(trip._id);
   //console.log(trip.image[0]);
   let source = trip.image[0];
+  let path = usePathname();
+
+  //console.log(path);
 
   return (
-    <LinkSListStyled href={`navigate/trips/${trip.slug}`}>
+    <LinkSListStyled href={`/navigate/trips/${trip.slug}`}>
       <ImageListStyled
         src={source || trip.image}
         alt={trip.title}

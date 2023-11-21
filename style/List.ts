@@ -9,6 +9,7 @@ display: flex;
 gap: 8px;
 flex-wrap: wrap;
 justify-content: space-evenly;
+padding: 0;
 `;
 
 export const StyledListItem = styled.li<{ $title?: boolean }>`

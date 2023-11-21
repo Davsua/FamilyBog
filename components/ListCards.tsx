@@ -8,7 +8,7 @@ const ListCards = (trips: any) => {
   //console.log(trips.trips);
   return (
     <StyledList>
-      {trips.trips.map((trip: ITrip) => (
+      {trips?.trips?.map((trip: ITrip) => (
         <StyledListItem key={trip.title}>
           <Card trip={trip} />
         </StyledListItem>

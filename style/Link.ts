@@ -3,13 +3,17 @@ import styled from 'styled-components';
 
 export const LinkStyled: any = styled(Link)<{ $using?: boolean; $add?: boolean; $title?: boolean }>`
 
-color: gray;
+color: #ffa317;
 text-decoration: ${(props) => (props.$using ? 'underline' : 'none')};
-font-weight: ${(props) => (props.$using ? 'bold' : 300)};
+font-weight: ${(props) => (props.$using ? 'bold' : '16px')};
 list-style-type: none;
+
+&:hover {
+    font-size: 17px; 
+  }
 
 `;
 
 export const LinkMainStyled = styled(LinkStyled)`
-color: white;
+color: #ffa317;
 `;

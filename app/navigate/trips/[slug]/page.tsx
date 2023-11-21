@@ -1,24 +1,16 @@
 import Heading from '@/components/Heading';
-import { trips } from '@/helps/tripArr';
 import { getSlugs, getTripBySlug, getTrips } from '@/lib/trips';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { Paragraph } from '@/style/text';
-import Swiper from 'swiper';
 import 'swiper/css';
-import { Navigation, Pagination } from 'swiper/modules';
 import SwiperGallery from '@/components/SwiperGalleryImg';
-import { GET } from '@/app/api/trip/[id]/route';
 
 export async function generateStaticParams() {
   const slugs = await getSlugs();
+  //console.log(slugs.length);
   return slugs.map((slug: any) => ({ slug }));
   //slugs.map((slug: any) => console.log(slug));
-}
-
-interface Props {
-  trip: object;
 }
 
 export default async function TripPage({ params: { slug } }: any) {
@@ -27,7 +19,7 @@ export default async function TripPage({ params: { slug } }: any) {
   const trip = await getTripBySlug(slug);
 
   //console.log(typeof trip.image);
-  console.log(trip.image);
+  //console.log(trip.image);
 
   if (!trip) {
     notFound();
@@ -39,7 +31,7 @@ export default async function TripPage({ params: { slug } }: any) {
         <Heading>{trip.title}</Heading>
         <Paragraph>{trip.shortResume}</Paragraph>
         <div className='flex gap-3 items-baseline'>
-          <p className='italic pb-2'>{trip.createdAt}</p>
+          <p className='italic pb-2'>{trip.createdAt.split('T').shift()}</p>
           {/*<ShareButtons />*/}
         </div>
         <SwiperGallery images={trip.image} />
